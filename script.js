@@ -41,6 +41,23 @@ listaOrdenada.addEventListener('click', (event) => {
       elemento.style.backgroundColor = '';
     }
     mudaCorDeFundo(event.target);
-    // selecionaApenasUm();
+  }
+});
+
+// 9 - Clicar duas vezes em um item, faz com que ele seja riscado, indicando que foi completado. Deve ser possível desfazer essa ação clicando novamente duas vezes no item
+
+const riscaItemLista = (elemento) => {
+  const itemLista = elemento;
+  console.log(itemLista);
+  if (itemLista.style.textDecorationLine !== 'line-through') {
+    itemLista.style.textDecorationLine = 'line-through';
+  } else {
+    itemLista.style.textDecorationLine = '';
+  }
+};
+
+listaOrdenada.addEventListener('dblclick', (event) => {
+  if (event.target.tagName === 'LI') {
+    riscaItemLista(event.target);
   }
 });
