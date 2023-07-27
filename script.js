@@ -1,7 +1,7 @@
 const butaoAdicionar = document.querySelector('#criar-tarefa');
 const entradaTexto = document.querySelector('#texto-tarefa');
 const listaOrdenada = document.querySelector('#lista-tarefas');
-
+const butaoApagaTudo = document.querySelector('#apaga-tudo');
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -9,7 +9,7 @@ const adicionaTextoALista = () => {
   butaoAdicionar.addEventListener('click', () => {
     const textoEntrada = entradaTexto.value;
     if (entradaTexto.value === '') {
-      window.alert('É necessario digitar um item');
+      window.alert('É necessario adicionar um item');
     } else {
       const lista = document.createElement('li');
       lista.innerHTML = textoEntrada;
@@ -64,5 +64,17 @@ const riscaItemLista = (elemento) => {
 listaOrdenada.addEventListener('dblclick', (event) => {
   if (event.target.tagName === 'LI') {
     riscaItemLista(event.target);
+  }
+});
+
+butaoApagaTudo.addEventListener('click', () => {
+  const listas = document.querySelectorAll('#lista-tarefas li');
+  if (listas.length !== 0) {
+    for (let index = 0; index < listas.length; index += 1) {
+      const element = listas[index];
+      listaOrdenada.removeChild(element);
+    }
+  } else {
+    window.alert('É necessario adicionar um item');
   }
 });
