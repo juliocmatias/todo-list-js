@@ -2,10 +2,6 @@ const butaoAdicionar = document.querySelector('#criar-tarefa');
 const entradaTexto = document.querySelector('#texto-tarefa');
 const listaOrdenada = document.querySelector('#lista-tarefas');
 
-// const redefineEntrada = () => {
-//   entradaTexto.value = '';
-// };
-
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -19,7 +15,6 @@ const adicionaTextoALista = () => {
       lista.innerHTML = textoEntrada;
       listaOrdenada.appendChild(lista);
       entradaTexto.value = '';
-      // redefineEntrada();
     }
   });
 };
