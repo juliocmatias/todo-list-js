@@ -54,7 +54,7 @@ const riscaItemLista = (elemento) => {
     itemLista.classList.add('completed');
   } else {
     itemLista.style.textDecorationLine = '';
-    itemLista.classList.add('completed');
+    itemLista.classList.remove('completed');
   }
 };
 
