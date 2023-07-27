@@ -11,10 +11,14 @@ const redefineEntrada = () => {
 const adicionaTextoALista = () => {
   butaoAdicionar.addEventListener('click', () => {
     const textoEntrada = entradaTexto.value;
-    const lista = document.createElement('li');
-    lista.innerHTML = textoEntrada;
-    listaOrdenada.appendChild(lista);
-    redefineEntrada();
+    if (entradaTexto.value === '') {
+      window.alert('É necessario digitar um item');
+    } else {
+      const lista = document.createElement('li');
+      lista.innerHTML = textoEntrada;
+      listaOrdenada.appendChild(lista);
+      redefineEntrada();
+    }
   });
 };
 adicionaTextoALista();
@@ -30,6 +34,7 @@ const mudaCorDeFundo = (elemento) => {
 
 listaOrdenada.addEventListener('click', (event) => {
   if (event.target.tagName === 'LI') {
+    // 8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
     const listas = document.querySelectorAll('#lista-tarefas li');
     for (let index = 0; index < listas.length; index += 1) {
       const elemento = listas[index];
@@ -39,6 +44,3 @@ listaOrdenada.addEventListener('click', (event) => {
     // selecionaApenasUm();
   }
 });
-
-// 8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
-
