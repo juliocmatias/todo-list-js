@@ -67,6 +67,8 @@ listaOrdenada.addEventListener('dblclick', (event) => {
   }
 });
 
+// 10 - Adicione um botão que quando clicado deve apagar todos os itens da lista
+
 butaoApagaTudo.addEventListener('click', () => {
   const listas = document.querySelectorAll('#lista-tarefas li');
   if (listas.length !== 0) {
