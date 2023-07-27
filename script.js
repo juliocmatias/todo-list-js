@@ -80,3 +80,5 @@ butaoApagaTudo.addEventListener('click', () => {
     window.alert('É necessario adicionar um item');
   }
 });
+
+// 11 - Adicione um botão que quando clicado remove somente os elementos finalizados da sua lista
