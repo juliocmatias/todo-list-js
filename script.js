@@ -51,8 +51,10 @@ const riscaItemLista = (elemento) => {
   console.log(itemLista);
   if (itemLista.style.textDecorationLine !== 'line-through') {
     itemLista.style.textDecorationLine = 'line-through';
+    itemLista.classList.add('completed');
   } else {
     itemLista.style.textDecorationLine = '';
+    itemLista.classList.add('completed');
   }
 };
 
