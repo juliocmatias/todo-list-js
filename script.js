@@ -23,15 +23,22 @@ adicionaTextoALista();
 
 const mudaCorDeFundo = (elemento) => {
   const itemLista = elemento;
-  if (itemLista.style.backgroundColor !== 'rgb(128, 128, 128)') {
-    itemLista.style.backgroundColor = 'rgb(128, 128, 128)';
-  } else {
-    itemLista.style.backgroundColor = '';
+  if (itemLista.style.backgroundColor !== 'gray') {
+    itemLista.style.backgroundColor = 'gray';
   }
 };
+
 listaOrdenada.addEventListener('click', (event) => {
-  console.log(event.target.tagName);
   if (event.target.tagName === 'LI') {
+    const listas = document.querySelectorAll('#lista-tarefas li');
+    for (let index = 0; index < listas.length; index += 1) {
+      const elemento = listas[index];
+      elemento.style.backgroundColor = '';
+    }
     mudaCorDeFundo(event.target);
+    // selecionaApenasUm();
   }
 });
+
+// 8 - Não deve ser possível selecionar mais de um elemento da lista ao mesmo tempo
+
