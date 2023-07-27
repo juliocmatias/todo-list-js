@@ -1,8 +1,9 @@
 const butaoAdicionar = document.querySelector('#criar-tarefa');
 const entradaTexto = document.querySelector('#texto-tarefa');
 const listaOrdenada = document.querySelector('#lista-tarefas');
+
 const redefineEntrada = () => {
-    entradaTexto.value = '';
+  entradaTexto.value = '';
 };
 const adicionaTextoALista = () => {
   butaoAdicionar.addEventListener('click', () => {
