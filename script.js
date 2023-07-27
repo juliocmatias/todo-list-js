@@ -23,6 +23,12 @@ const adicionaTextoALista = () => {
 };
 adicionaTextoALista();
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    butaoAdicionar.click();
+  }
+});
+
 // 7 - Clicar em um item da lista deve alterar a cor de fundo do item para cinza
 
 const mudaCorDeFundo = (elemento) => {
