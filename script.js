@@ -32,7 +32,6 @@ document.addEventListener('keydown', (event) => {
 
 const mudaCorDeFundo = (elemento) => {
   const itemLista = elemento;
-  console.log(itemLista);
   if (itemLista.style.backgroundColor !== 'gray') {
     itemLista.style.backgroundColor = 'gray';
   }
@@ -121,16 +120,16 @@ butaoRemoveCompletados.addEventListener('click', () => {
 const salvaTarefas = (array) => {
   const arrayItens = JSON.parse(localStorage.getItem('itensSalvo'));
   const arrayListas = array;
-  const arrayLis = [];
   for (let index = 0; index < arrayListas.length; index += 1) {
-    const elementoLista = arrayListas[index].innerHTML;
-    const tagLi = arrayListas[index];
-    console.log(tagLi);
-    arrayItens.push(elementoLista);
+    const elementoLista = arrayListas[index];
+    const ItemListaObjeto = {
+      text: elementoLista.innerHTML,
+      backgroundColor: elementoLista.style.backgroundColor,
+      textDecorationLine: elementoLista.style.textDecorationLine,
+    };
+    arrayItens.push(ItemListaObjeto);
   }
-  console.log(arrayLis);
   localStorage.setItem('itensSalvo', JSON.stringify(arrayItens));
-  // localStorage.setItem('tagLi', JSON.stringify(arrayLis));
 };
 
 butaoSalvaTarefas.addEventListener('click', () => {
@@ -145,16 +144,16 @@ butaoSalvaTarefas.addEventListener('click', () => {
   }
 });
 
-const restauraLista = () => {
-  if (localStorage.getItem('itensSalvo') !== null) {
-    const restaraItens = JSON.parse(localStorage.getItem('itensSalvo'));
-    for (let index = 0; index < restaraItens.length; index += 1) {
-      const elementoItem = restaraItens[index];
-      const lista = document.createElement('li');
-      lista.innerHTML = elementoItem;
-      listaOrdenada.appendChild(lista);
-    }
-  }
-};
+// const restauraLista = () => {
+//   if (localStorage.getItem('itensSalvo') !== null) {
+//     const restaraItens = JSON.parse(localStorage.getItem('itensSalvo'));
+//     for (let index = 0; index < restaraItens.length; index += 1) {
+//       const elementoItem = restaraItens[index];
+//       const lista = document.createElement('li');
+//       lista.innerHTML = elementoItem;
+//       listaOrdenada.appendChild(lista);
+//     }
+//   }
+// };
 
-window.onload = restauraLista;
+// window.onload = restauraLista;
