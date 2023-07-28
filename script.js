@@ -126,6 +126,7 @@ const salvaTarefas = (array) => {
       text: elementoLista.innerHTML,
       backgroundColor: elementoLista.style.backgroundColor,
       textDecorationLine: elementoLista.style.textDecorationLine,
+      Class: elementoLista.className,
     };
     arrayItens.push(ItemListaObjeto);
   }
@@ -144,16 +145,20 @@ butaoSalvaTarefas.addEventListener('click', () => {
   }
 });
 
-// const restauraLista = () => {
-//   if (localStorage.getItem('itensSalvo') !== null) {
-//     const restaraItens = JSON.parse(localStorage.getItem('itensSalvo'));
-//     for (let index = 0; index < restaraItens.length; index += 1) {
-//       const elementoItem = restaraItens[index];
-//       const lista = document.createElement('li');
-//       lista.innerHTML = elementoItem;
-//       listaOrdenada.appendChild(lista);
-//     }
-//   }
-// };
+const restauraLista = () => {
+  if (localStorage.getItem('itensSalvo') !== null) {
+    const restaraItens = JSON.parse(localStorage.getItem('itensSalvo'));
+    for (let index = 0; index < restaraItens.length; index += 1) {
+      const elementoItemObjeto = restaraItens[index];
+      // console.log(elementoItemObjeto);
+      const item = document.createElement('li');
+      item.innerText = elementoItemObjeto.text;
+      item.style.backgroundColor = elementoItemObjeto.backgroundColor;
+      item.style.textDecorationLine = elementoItemObjeto.textDecorationLine;
+      item.className = elementoItemObjeto.Class;
+      listaOrdenada.appendChild(item);
+    }
+  }
+};
 
-// window.onload = restauraLista;
+window.onload = restauraLista;
