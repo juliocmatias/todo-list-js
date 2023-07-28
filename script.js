@@ -1,9 +1,9 @@
 const butaoAdicionar = document.querySelector('#criar-tarefa');
 const entradaTexto = document.querySelector('#texto-tarefa');
 const listaOrdenada = document.querySelector('#lista-tarefas');
-const butaoApagaTudo = document.querySelector('#apaga-tudo');
-const butaoRemoveCompletados = document.querySelector('#remover-finalizados');
-const butaoSalvaTarefas = document.querySelector('#salvar-tarefas');
+const butaoLimparLista = document.querySelector('#apaga-tudo');
+const butaoLimparCompletados = document.querySelector('#remover-finalizados');
+const butaoSalvarLista = document.querySelector('#salvar-tarefas');
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -80,7 +80,7 @@ listaOrdenada.addEventListener('dblclick', (event) => {
 
 // 10 - Adicione um botão que quando clicado deve apagar todos os itens da lista
 
-butaoApagaTudo.addEventListener('click', () => {
+butaoLimparLista.addEventListener('click', () => {
   localStorage.clear();
   const listas = document.querySelectorAll('#lista-tarefas li');
   if (listas.length !== 0) {
@@ -100,18 +100,18 @@ butaoApagaTudo.addEventListener('click', () => {
 // Isso pode levar a um comportamento imprevisível ao iterar pela coleção itensCompletados usando um loop for, pois a quantidade de elementos na coleção está mudando durante o loop.
 
 const itensCompletados = document.getElementsByClassName('completed');
-const removeItensCompretado = (array) => {
+const removeItensCompletado = (array) => {
   const itensArray = Array.from(array);
   for (let index = 0; index < itensArray.length; index += 1) {
     const item = itensArray[index];
     listaOrdenada.removeChild(item);
   }
 };
-butaoRemoveCompletados.addEventListener('click', () => {
+butaoLimparCompletados.addEventListener('click', () => {
   if (itensCompletados.length === 0) {
     window.alert('É necessario primeiro de marca os itens!');
   } else {
-    removeItensCompretado(itensCompletados);
+    removeItensCompletado(itensCompletados);
   }
 });
 
@@ -133,7 +133,7 @@ const salvaTarefas = (array) => {
   localStorage.setItem('itensSalvo', JSON.stringify(arrayItens));
 };
 
-butaoSalvaTarefas.addEventListener('click', () => {
+butaoSalvarLista.addEventListener('click', () => {
   const listaParaSalvar = document.querySelectorAll('li');
   if (localStorage.getItem('itensSalvo') === null) {
     localStorage.setItem('itensSalvo', JSON.stringify([]));
@@ -162,3 +162,5 @@ const restauraLista = () => {
 };
 
 window.onload = restauraLista;
+
+// 13 - Adicione dois botões, que permitam mover o item selecionado para cima ou para baixo na lista de tarefas
