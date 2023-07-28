@@ -3,7 +3,7 @@ const entradaTexto = document.querySelector('#texto-tarefa');
 const listaOrdenada = document.querySelector('#lista-tarefas');
 const butaoApagaTudo = document.querySelector('#apaga-tudo');
 const butaoRemoveCompletados = document.querySelector('#remover-finalizados');
-
+const butaoSalvaTarefas = document.querySelector('#salvar-tarefas');
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -32,8 +32,17 @@ document.addEventListener('keydown', (event) => {
 
 const mudaCorDeFundo = (elemento) => {
   const itemLista = elemento;
+  console.log(itemLista);
   if (itemLista.style.backgroundColor !== 'gray') {
     itemLista.style.backgroundColor = 'gray';
+  }
+};
+
+const retiraCorDeFundoLI = () => {
+  const listas = document.querySelectorAll('li');
+  for (let index = 0; index < listas.length; index += 1) {
+    const elemento = listas[index];
+    elemento.style.backgroundColor = '';
   }
 };
 
@@ -46,6 +55,8 @@ listaOrdenada.addEventListener('click', (event) => {
       elemento.style.backgroundColor = '';
     }
     mudaCorDeFundo(event.target);
+  } else {
+    retiraCorDeFundoLI();
   }
 });
 
@@ -71,6 +82,7 @@ listaOrdenada.addEventListener('dblclick', (event) => {
 // 10 - Adicione um botão que quando clicado deve apagar todos os itens da lista
 
 butaoApagaTudo.addEventListener('click', () => {
+  localStorage.clear();
   const listas = document.querySelectorAll('#lista-tarefas li');
   if (listas.length !== 0) {
     for (let index = 0; index < listas.length; index += 1) {
@@ -103,3 +115,46 @@ butaoRemoveCompletados.addEventListener('click', () => {
     removeItensCompretado(itensCompletados);
   }
 });
+
+// 12 - Adicione um botão que salva o conteúdo da lista. Se você fechar e reabrir a página, a lista deve continuar no estado em que estava
+
+const salvaTarefas = (array) => {
+  const arrayItens = JSON.parse(localStorage.getItem('itensSalvo'));
+  const arrayListas = array;
+  const arrayLis = [];
+  for (let index = 0; index < arrayListas.length; index += 1) {
+    const elementoLista = arrayListas[index].innerHTML;
+    const tagLi = arrayListas[index];
+    console.log(tagLi);
+    arrayItens.push(elementoLista);
+  }
+  console.log(arrayLis);
+  localStorage.setItem('itensSalvo', JSON.stringify(arrayItens));
+  // localStorage.setItem('tagLi', JSON.stringify(arrayLis));
+};
+
+butaoSalvaTarefas.addEventListener('click', () => {
+  const listaParaSalvar = document.querySelectorAll('li');
+  if (localStorage.getItem('itensSalvo') === null) {
+    localStorage.setItem('itensSalvo', JSON.stringify([]));
+  }
+  if (listaParaSalvar.length === 0) {
+    window.alert('É necessario ter sido adicionado item, para ser salvo!');
+  } else {
+    salvaTarefas(listaParaSalvar);
+  }
+});
+
+const restauraLista = () => {
+  if (localStorage.getItem('itensSalvo') !== null) {
+    const restaraItens = JSON.parse(localStorage.getItem('itensSalvo'));
+    for (let index = 0; index < restaraItens.length; index += 1) {
+      const elementoItem = restaraItens[index];
+      const lista = document.createElement('li');
+      lista.innerHTML = elementoItem;
+      listaOrdenada.appendChild(lista);
+    }
+  }
+};
+
+window.onload = restauraLista;
