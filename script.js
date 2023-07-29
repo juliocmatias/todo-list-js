@@ -6,6 +6,8 @@ const butaoLimparCompletados = document.querySelector('#remover-finalizados');
 const butaoSalvarLista = document.querySelector('#salvar-tarefas');
 const butaoMoveCima = document.querySelector('#mover-cima');
 const butaoMoveBaixo = document.querySelector('#mover-baixo');
+const butaoRemoverSelecionado = document.querySelector('#remover-selecionado');
+
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -214,3 +216,19 @@ butaoMoveBaixo.addEventListener('click', () => {
 });
 
 // 14 - Adicione um botão que, quando clicado, remove o item selecionado
+
+butaoRemoverSelecionado.addEventListener('click', () => {
+  const lista = document.querySelectorAll('li');
+  let itemMarcado = '';
+  for (let index = 0; index < lista.length; index += 1) {
+    const element = lista[index];
+    if (element.style.backgroundColor === 'gray') {
+      itemMarcado = element;
+    }
+  }
+  if (itemMarcado === '') {
+    window.alert('Deve ter pelo menos um item marcado!');
+  } else {
+    listaOrdenada.removeChild(itemMarcado);
+  }
+});
