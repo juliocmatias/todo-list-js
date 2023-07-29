@@ -4,6 +4,8 @@ const listaOrdenada = document.querySelector('#lista-tarefas');
 const butaoLimparLista = document.querySelector('#apaga-tudo');
 const butaoLimparCompletados = document.querySelector('#remover-finalizados');
 const butaoSalvarLista = document.querySelector('#salvar-tarefas');
+const butaoMoveCima = document.querySelector('#mover-cima');
+const butaoMoveBaixo = document.querySelector('#mover-baixo');
 // 5 - Adicione um botão e, ao clicar nesse botão, um novo item deverá ser criado ao final da lista e o texto do input deve ser limpo
 // 6 - Adicione três novas tarefas e ordene todas as tarefas da lista por ordem de criação
 
@@ -164,3 +166,50 @@ const restauraLista = () => {
 window.onload = restauraLista;
 
 // 13 - Adicione dois botões, que permitam mover o item selecionado para cima ou para baixo na lista de tarefas
+
+const moveCima = (item) => {
+  const itemMarcado = item;
+  const itemAnterior = itemMarcado.previousElementSibling;
+  if (itemAnterior !== null) {
+    listaOrdenada.insertBefore(itemMarcado, itemAnterior);
+  }
+};
+
+butaoMoveCima.addEventListener('click', () => {
+  const lista = document.querySelectorAll('li');
+  let itemMarcado = '';
+  for (let index = 0; index < lista.length; index += 1) {
+    const element = lista[index];
+    if (element.style.backgroundColor === 'gray') {
+      itemMarcado = element;
+    }
+  }
+  if (itemMarcado !== null && lista.length <= 1) {
+    window.alert('É necessario ter sido marcado um item, e a lista ser maior que 1 item!');
+  }
+  moveCima(itemMarcado);
+});
+
+const moveBaixo = (item) => {
+  const itemMarcado = item;
+  const proximoItem = itemMarcado.nextElementSibling;
+  console.log(proximoItem);
+  if (proximoItem !== null) {
+    listaOrdenada.insertBefore(proximoItem, itemMarcado);
+  }
+};
+
+butaoMoveBaixo.addEventListener('click', () => {
+  const lista = document.querySelectorAll('li');
+  let itemMarcado = '';
+  for (let index = 0; index < lista.length; index += 1) {
+    const element = lista[index];
+    if (element.style.backgroundColor === 'gray') {
+      itemMarcado = element;
+    }
+  }
+  if (itemMarcado !== null && lista.length <= 1) {
+    window.alert('É necessario ter sido marcado um item, e a lista ser maior que 1 item!');
+  }
+  moveBaixo(itemMarcado);
+});
