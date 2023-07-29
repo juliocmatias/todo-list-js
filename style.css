@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+body {
+    background-color: rgb(2, 62, 138);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main {
+    background-color: white;
+    margin-left: 12%;
+    margin-right: 12%;
+    border-radius: 10px;
+    padding-left: 30px;
+}
+footer {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 15px;
+    color: white;
+}
+header {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+#funcionamento {
+    padding-bottom: 10px;
+}
+#texto-tarefa {
+    width: 430px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+input:focus {
+    border: 4px rgb(2, 62, 138);
+    border-style: groove;
+    border-radius: 4px;
+    width: 430px;
+}
+#criar-tarefa {
+    background-color: rgb(2, 62, 138);
+}
