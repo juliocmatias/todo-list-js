@@ -69,9 +69,11 @@ const riscaItemLista = (elemento) => {
   const itemLista = elemento;
   if (itemLista.style.textDecorationLine !== 'line-through') {
     itemLista.style.textDecorationLine = 'line-through';
+    itemLista.style.color = 'gray';
     itemLista.classList.add('completed');
   } else {
     itemLista.style.textDecorationLine = '';
+    itemLista.style.color = '';
     itemLista.classList.remove('completed');
   }
 };
