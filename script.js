@@ -170,7 +170,7 @@ window.onload = restauraLista;
 const moveCima = (item) => {
   const itemMarcado = item;
   const itemAnterior = itemMarcado.previousElementSibling;
-  if (itemAnterior !== null) {
+  if (itemAnterior !== null && itemAnterior !== undefined) {
     listaOrdenada.insertBefore(itemMarcado, itemAnterior);
   }
 };
@@ -193,8 +193,7 @@ butaoMoveCima.addEventListener('click', () => {
 const moveBaixo = (item) => {
   const itemMarcado = item;
   const proximoItem = itemMarcado.nextElementSibling;
-  console.log(proximoItem);
-  if (proximoItem !== null) {
+  if (proximoItem !== null && proximoItem !== undefined) {
     listaOrdenada.insertBefore(proximoItem, itemMarcado);
   }
 };
