@@ -38,6 +38,9 @@ li {
     padding: 2px 5px;
     border-radius: 10px;
 }
+ol {
+    margin-bottom: 9px;
+}
 input {
     border: none;
 }
@@ -73,7 +76,7 @@ input:focus {
 
 #remover-selecionado img{
     width: 19px;
-    
+    background-color: transparent;
 }
 #remover-selecionado img:hover {
     border: 1px solid blue;
@@ -88,6 +91,7 @@ input:focus {
 }
 #mover-cima {
     border: transparent;
+    background-color: transparent;
 }
 #mover-cima img {
     width: 19px;
@@ -103,6 +107,7 @@ input:focus {
 }
 #mover-baixo {
     border: transparent;
+    background-color: transparent;
 }
 #mover-baixo img{
     width: 19px;
