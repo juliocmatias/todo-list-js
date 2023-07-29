@@ -212,3 +212,5 @@ butaoMoveBaixo.addEventListener('click', () => {
   }
   moveBaixo(itemMarcado);
 });
+
+// 14 - Adicione um botão que, quando clicado, remove o item selecionado
