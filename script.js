@@ -68,12 +68,13 @@ listaOrdenada.addEventListener('click', (event) => {
 const riscaItemLista = (elemento) => {
   const itemLista = elemento;
   if (itemLista.style.textDecorationLine !== 'line-through') {
-    itemLista.style.textDecorationLine = 'line-through';
     itemLista.style.color = 'gray';
+    itemLista.style.textDecorationLine = 'line-through';
+    itemLista.style.textDecorationColor = 'black';
     itemLista.classList.add('completed');
   } else {
-    itemLista.style.textDecorationLine = '';
     itemLista.style.color = '';
+    itemLista.style.textDecorationLine = '';
     itemLista.classList.remove('completed');
   }
 };
@@ -134,6 +135,7 @@ const salvaTarefas = (array) => {
       textDecorationLine: elementoLista.style.textDecorationLine,
       Class: elementoLista.className,
       color: elementoLista.style.color,
+      textDecorationColor: elementoLista.style.textDecorationColor,
     };
     arrayItens.push(ItemListaObjeto);
   }
@@ -161,9 +163,10 @@ const restauraLista = () => {
       const item = document.createElement('li');
       item.innerText = elementoItemObjeto.text;
       item.style.backgroundColor = elementoItemObjeto.backgroundColor;
+      item.style.color = elementoItemObjeto.color;
       item.style.textDecorationLine = elementoItemObjeto.textDecorationLine;
       item.className = elementoItemObjeto.Class;
-      item.style.color = elementoItemObjeto.color;
+      item.style.textDecorationColor = elementoItemObjeto.textDecorationColor;
       listaOrdenada.appendChild(item);
     }
   }
