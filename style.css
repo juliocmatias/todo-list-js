@@ -1,176 +1,197 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-color: rgb(2, 62, 138);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(2 , 62 , 138);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 main {
-    background-color: white;
-    margin-left: 12%;
-    margin-right: 12%;
-    border-radius: 10px;
-    padding-left: 30px;
+  background-color: white;
+  margin-left: 12%;
+  margin-right: 12%;
+  border-radius: 10px;
+  padding-left: 30px;
 }
+
 footer {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    font-size: 15px;
-    color: white;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: 15px;
+  color: white;
 }
+
 header {
-    width: 100%;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 800;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 800;
 }
+
 li {
-    margin-left: 40px;
-    margin-bottom: 2px;
-    /* text-decoration-color: brown; */
-    width: fit-content;
-    padding: 2px 5px;
-    border-radius: 10px;
+  margin-left: 40px;
+  margin-bottom: 2px; /* text-decoration-color: brown; */
+  width: fit-content;
+  padding: 2px 5px;
+  border-radius: 10px;
 }
+
 ol {
-    margin-bottom: 9px;
-    max-height: 68vh; /* Altura máxima de 80% da altura da viewport */
-    overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
+  margin-bottom: 9px;
+  max-height: 68vh; /* Altura máxima de 80% da altura da viewport */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
 }
+
 input {
-    border: none;
+  border: none;
 }
+
 input:focus {
-    border-color: rgb(0, 119, 182);
-    outline: none;
+  border-color: rgb(0 , 119 , 182);
+  outline: none;
 }
+
 #funcionamento {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
+
 #texto-tarefa {
-    width: 400px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    margin-right: 5px;
-    border-style: groove;
+  width: 400px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  border-style: groove;
 }
+
 #criar-tarefa {
-    background-color: rgb(0, 119, 182);
-    color: white;
-    font-weight: 700;
-    padding: 1px;
-    border-color: rgb(0, 119, 182);
-    border: transparent;
-    border-radius: 8px;
-    width: 90px;
-    height: 20px;
+  background-color: rgb(0 , 119 , 182);
+  color: white;
+  font-weight: 700;
+  padding: 1px;
+  border-color: rgb(0 , 119 , 182);
+  border: transparent;
+  border-radius: 8px;
+  width: 90px;
+  height: 20px;
 }
+
 #criar-tarefa:hover {
-    background-color: rgb(0, 150, 199);
-    border: transparent;
+  background-color: rgb(0 , 150 , 199);
+  border: transparent;
 }
+
 #editacao-dados {
-    display: flex;
-    align-items:flex-end;
-    padding-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
 }
-#remover-selecionado img{
-    width: 19px;
-    background-color: transparent;
+
+#remover-selecionado img {
+  width: 19px;
+  background-color: transparent;
 }
-#remover-selecionado img:hover {
-    border: 1px solid blue;
-    box-sizing: border-box;
-    border-radius: 30px;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-}
-#remover-selecionado {
-    border: transparent;
-}
-#mover-cima {
-    border: transparent;
-    background-color: transparent;
-}
+
 #mover-cima img {
-    width: 19px;
-    margin-left: 10px;
+  width: 19px;
+  margin-left: 10px;
 }
+
+#mover-baixo img {
+  width: 19px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#remover-selecionado img:hover {
+  border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 30px;
+  box-shadow: 0 0 6px 1px rgba(0 , 0 , 0 , 0.75);
+}
+
 #mover-cima img:hover {
-    border: 1px solid blue;
-    box-sizing: border-box;
-    border-radius: 30px;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+  border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 30px;
+  box-shadow: 0 0 6px 1px rgba(0 , 0 , 0 , 0.75);
 }
-#mover-baixo {
-    border: transparent;
-    background-color: transparent;
-    margin-top: 5px;
-}
-#mover-baixo img{
-    width: 19px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+
 #mover-baixo img:hover {
-    border: 1px solid blue;
-    box-sizing: border-box;
-    border-radius: 30px;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+  border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 30px;
+  box-shadow: 0 0 6px 1px rgba(0 , 0 , 0 , 0.75);
 }
+
+#remover-selecionado {
+  border: transparent;
+}
+
+#mover-cima {
+  border: transparent;
+  background-color: transparent;
+}
+
+#mover-baixo {
+  border: transparent;
+  background-color: transparent;
+  margin-top: 5px;
+}
+
 #remover-finalizados {
-    border-radius: 8px;
-    padding: 3px;
-    width: auto;
-    background-color: rgb(0, 119, 182);
-    color: white;
-    border: transparent;
-    margin-right: 10px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    font-weight: 700;
+  border-radius: 8px;
+  padding: 3px;
+  width: auto;
+  background-color: rgb(0 , 119 , 182);
+  color: white;
+  border: transparent;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
+
 #remover-finalizados:hover {
-    background-color: rgb(12, 142, 212);
+  background-color: rgb(12 , 142 , 212);
 }
+
 #apaga-tudo {
-    border-radius: 8px;
-    padding: 3px;
-    width: auto;
-    background-color: rgb(255, 26, 26);
-    color: white;
-    border: transparent;
-    margin-right: 10px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    font-weight: 700;
+  border-radius: 8px;
+  padding: 3px;
+  width: auto;
+  background-color: rgb(255 , 26 , 26);
+  color: white;
+  border: transparent;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
+
 #apaga-tudo:hover {
-    background-color: rgba(255, 26, 26, 0.637);
+  background-color: rgba(255 , 26 , 26 , 0.637);
 }
+
 #salvar-tarefas {
-    border-radius: 8px;
-    padding: 3px;
-    width: auto;
-    background-color: rgb(0, 92, 0);
-    color: white;
-    border: transparent;
-    margin-right: 10px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    font-weight: 700;
+  border-radius: 8px;
+  padding: 3px;
+  width: auto;
+  background-color: rgb(0 , 92 , 0);
+  color: white;
+  border: transparent;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
+
 #salvar-tarefas:hover {
-    background-color: rgba(0, 146, 0, 0.801);
+  background-color: rgba(0 , 146 , 0 , 0.801);
 }
