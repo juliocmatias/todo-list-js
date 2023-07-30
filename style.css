@@ -40,6 +40,8 @@ li {
 }
 ol {
     margin-bottom: 9px;
+    max-height: 68vh; /* Altura máxima de 80% da altura da viewport */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
 }
 input {
     border: none;
@@ -73,7 +75,11 @@ input:focus {
     background-color: rgb(0, 150, 199);
     border: transparent;
 }
-
+#editacao-dados {
+    display: flex;
+    align-items:flex-end;
+    padding-bottom: 5px;
+}
 #remover-selecionado img{
     width: 19px;
     background-color: transparent;
@@ -108,6 +114,7 @@ input:focus {
 #mover-baixo {
     border: transparent;
     background-color: transparent;
+    margin-top: 5px;
 }
 #mover-baixo img{
     width: 19px;
@@ -121,4 +128,49 @@ input:focus {
     -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+}
+#remover-finalizados {
+    border-radius: 8px;
+    padding: 3px;
+    width: auto;
+    background-color: rgb(0, 119, 182);
+    color: white;
+    border: transparent;
+    margin-right: 10px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+#remover-finalizados:hover {
+    background-color: rgb(12, 142, 212);
+}
+#apaga-tudo {
+    border-radius: 8px;
+    padding: 3px;
+    width: auto;
+    background-color: rgb(255, 26, 26);
+    color: white;
+    border: transparent;
+    margin-right: 10px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+#apaga-tudo:hover {
+    background-color: rgba(255, 26, 26, 0.637);
+}
+#salvar-tarefas {
+    border-radius: 8px;
+    padding: 3px;
+    width: auto;
+    background-color: rgb(0, 92, 0);
+    color: white;
+    border: transparent;
+    margin-right: 10px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+#salvar-tarefas:hover {
+    background-color: rgba(0, 146, 0, 0.801);
 }
