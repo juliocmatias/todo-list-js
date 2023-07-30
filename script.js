@@ -133,6 +133,7 @@ const salvaTarefas = (array) => {
       backgroundColor: elementoLista.style.backgroundColor,
       textDecorationLine: elementoLista.style.textDecorationLine,
       Class: elementoLista.className,
+      color: elementoLista.style.color,
     };
     arrayItens.push(ItemListaObjeto);
   }
@@ -162,6 +163,7 @@ const restauraLista = () => {
       item.style.backgroundColor = elementoItemObjeto.backgroundColor;
       item.style.textDecorationLine = elementoItemObjeto.textDecorationLine;
       item.className = elementoItemObjeto.Class;
+      item.style.color = elementoItemObjeto.color;
       listaOrdenada.appendChild(item);
     }
   }
