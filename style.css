@@ -13,7 +13,8 @@ main {
   margin-left: 12%;
   margin-right: 12%;
   border-radius: 10px;
-  padding-left: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 footer {
@@ -27,7 +28,6 @@ footer {
 }
 
 header {
-  width: 100%;
   text-align: center;
   margin: 10px;
   padding: 10px;
@@ -44,6 +44,7 @@ li {
 }
 
 ol {
+  margin-top: 9px;
   margin-bottom: 9px;
   max-height: 68vh; /* Altura máxima de 80% da altura da viewport */
   overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
@@ -63,7 +64,7 @@ input:focus {
 }
 
 #texto-tarefa {
-  width: 400px;
+  width: 90%;
   border-radius: 4px;
   margin-bottom: 20px;
   margin-right: 5px;
@@ -91,6 +92,7 @@ input:focus {
   display: flex;
   align-items: flex-end;
   padding-bottom: 5px;
+  flex-flow: row wrap;
 }
 
 #remover-selecionado img {
@@ -142,7 +144,6 @@ input:focus {
 #mover-baixo {
   border: transparent;
   background-color: transparent;
-  margin-top: 5px;
 }
 
 #remover-finalizados {
