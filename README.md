@@ -55,7 +55,7 @@ using this command application will open in the browser.
 <details>
   <summary><strong>Url</strong></summary>
 
-  If you want an option to view the application more easily and quickly, click on [Pixel-Art](https://juliomatiastrybe.github.io/project-pixel-art/)
+  If you want an option to view the application more easily and quickly, click on [ToDoList](https://juliomatiastrybe.github.io/project-todo-list/)
 
 </details>
 
