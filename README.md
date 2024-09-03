@@ -15,7 +15,7 @@ It was developed in HTML and script.js and style.css files. Pixel Art is a web p
 
 copy the repository to a local folder using the terminal and passing the command:
 
-`git clone git@github.com:juliomatiastrybe/todo-list-js.git`
+`git clone git@github.com:juliocmatias/todo-list-js.git`
 
 If you don't have git installed, you can install it using this command in the shell and bash terminal:
 
@@ -55,7 +55,7 @@ using this command application will open in the browser.
 <details>
   <summary><strong>Url</strong></summary>
 
-  If you want an option to view the application more easily and quickly, click on [ToDoList](https://juliomatiastrybe.github.io/project-todo-list/)
+  If you want an option to view the application more easily and quickly, click on [ToDoList](https://juliocmatias.github.io/project-todo-list/)
 
 </details>
 
